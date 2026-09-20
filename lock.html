@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>🔒 Private Access Only 🔒</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(145deg, #0b0a1a 0%, #1e1b3b 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.8rem;
+      overflow-x: hidden;
+      position: relative;
+    }
+    /* twinkling stars */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+                  radial-gradient(2px 2px at 40% 70%, #f5c6ff, transparent),
+                  radial-gradient(3px 3px at 70% 20%, #b8a9ff, transparent),
+                  radial-gradient(2px 2px at 90% 80%, #ffd6e8, transparent),
+                  radial-gradient(4px 4px at 10% 90%, #fbc2ff, transparent),
+                  radial-gradient(6px 6px at 60% 50%, #ffdd99, transparent),
+                  radial-gradient(5px 5px at 85% 30%, #99ddff, transparent);
+      background-size: 200px 200px;
+      background-repeat: repeat;
+      opacity: 0.6;
+      pointer-events: none;
+      animation: twinkle 3s infinite alternate;
+      z-index: 0;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.3; transform: scale(1); }
+      100% { opacity: 0.8; transform: scale(1.05); }
+    }
+
+    .main-wrapper {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 480px;
+      background: rgba(20, 18, 40, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 2.8rem;
+      padding: 2.5rem 1.5rem 2.5rem;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 0 2px rgba(255, 215, 255, 0.2), inset 0 0 60px rgba(190, 130, 255, 0.25);
+      border: 1px solid rgba(255, 220, 255, 0.25);
+      text-align: center;
+      animation: fadeGlow 0.9s ease;
+    }
+    @keyframes fadeGlow {
+      0% { opacity: 0; transform: translateY(25px) scale(0.96); filter: blur(8px); }
+      100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    .lock-icon {
+      font-size: 4.2rem;
+      animation: lockPulse 2s ease-in-out infinite;
+      filter: drop-shadow(0 0 30px #ffb0f0);
+      margin-bottom: 0.3rem;
+    }
+    @keyframes lockPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px #ffb0f0); }
+      50% { transform: scale(1.12); filter: drop-shadow(0 0 60px #ff99dd, 0 0 100px #b47aff); }
+    }
+
+    .lock-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      background: linear-gradient(135deg, #ffdbb5, #ffb0f0, #c5acff, #ff99dd);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+    .lock-sub {
+      color: #eaceff;
+      font-size: 1rem;
+      font-weight: 500;
+      background: rgba(255, 200, 255, 0.08);
+      padding: 0.5rem 1.3rem;
+      border-radius: 40px;
+      border: 1px solid #ffb0ff44;
+      backdrop-filter: blur(4px);
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 1.8rem;
+    }
+    .lock-sub i {
+      color: #ff8dcb;
+      margin: 0 4px;
+    }
+
+    .password-input-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 310px;
+      margin: 0 auto 0.5rem;
+    }
+    .password-input {
+      width: 100%;
+      padding: 1rem 3rem 1rem 1.5rem;
+      border-radius: 60px;
+      border: 2px solid rgba(255, 180, 255, 0.4);
+      background: rgba(0, 0, 0, 0.4);
+      color: #fff3d6;
+      font-size: 1.2rem;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-align: center;
+      outline: none;
+      transition: 0.3s;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px rgba(180, 122, 255, 0.2);
+    }
+    .password-input::placeholder {
+      color: #b8a0d0;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+    .password-input:focus {
+      border-color: #ffb0f0;
+      box-shadow: 0 0 40px #b47aff, 0 0 80px #ff99dd55;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .password-input.error {
+      border-color: #ff4d6d;
+      animation: shake 0.5s ease;
+      box-shadow: 0 0 40px #ff4d6d;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-12px); }
+      40% { transform: translateX(12px); }
+      60% { transform: translateX(-8px); }
+      80% { transform: translateX(8px); }
+    }
+    .input-icon {
+      position: absolute;
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ffb0f0;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .input-icon:hover {
+      color: #fff3d6;
+      text-shadow: 0 0 20px #ffb0f0;
+    }
+
+    .unlock-btn {
+      background: linear-gradient(145deg, #ff99dd, #b47aff, #ff99dd);
+      background-size: 200% 200%;
+      animation: rainbowBtn 3s ease infinite;
+      border: none;
+      padding: 0.9rem 2.5rem;
+      border-radius: 60px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #170f2b;
+      letter-spacing: 2px;
+      box-shadow: 0 0 40px #c87aff, 0 10px 20px rgba(0,0,0,0.5);
+      transition: 0.3s;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      width: 100%;
+      max-width: 240px;
+      text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+      margin: 1rem auto 0;
+      display: block;
+    }
+    @keyframes rainbowBtn {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .unlock-btn:hover { transform: scale(1.05); box-shadow: 0 0 70px #b47aff; }
+    .unlock-btn:active { transform: scale(0.94); }
+
+    .error-msg {
+      color: #ff8daa;
+      font-size: 0.95rem;
+      font-weight: 600;
+      min-height: 1.4rem;
+      margin-top: 0.6rem;
+      text-shadow: 0 0 20px #ff4d6d;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .hint-msg {
+      color: #c2b0f0;
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-top: 1rem;
+      opacity: 0.75;
+      letter-spacing: 0.5px;
+    }
+    .hint-msg i {
+      color: #ffb0f0;
+      margin-right: 4px;
+    }
+
+    .hearts-float {
+      font-size: 1.4rem;
+      letter-spacing: 8px;
+      margin-top: 1.2rem;
+      opacity: 0.8;
+      animation: floatHearts 3s ease-in-out infinite;
+    }
+    @keyframes floatHearts {
+      0%, 100% { transform: translateY(0); opacity: 0.6; }
+      50% { transform: translateY(-8px); opacity: 1; }
+    }
+
+    @media (max-width: 450px) {
+      .main-wrapper { padding: 2rem 1rem 2rem; border-radius: 2rem; }
+      .lock-title { font-size: 2.2rem; }
+      .lock-icon { font-size: 3.4rem; }
+      .password-input { font-size: 1rem; padding: 0.9rem 2.5rem 0.9rem 1rem; }
+      .unlock-btn { font-size: 1.2rem; padding: 0.8rem 2rem; max-width: 200px; }
+    }
+  </style>
+</head>
+<body>
+<div class="main-wrapper">
+  <div class="lock-icon">🔒</div>
+  <div class="lock-title">Private  access</div>
+  <div class="lock-sub"><i class="fas fa-heart"></i> only for you BABE <i class="fas fa-heart"></i></div>
+
+  <div class="password-input-wrap">
+    <input type="password" class="password-input" id="passwordInput" placeholder="enter secret password" autocomplete="off">
+    <i class="fas fa-eye input-icon" id="toggleEye"></i>
+  </div>
+
+  <button class="unlock-btn" id="unlockBtn"><i class="fas fa-unlock"></i> Unlock</button>
+
+  <div class="error-msg" id="errorMsg"></div>
+  <div class="hint-msg"><i class="fas fa-lightbulb"></i> hint:might be any random stuff</div>
+
+  <div class="hearts-float"> 💖</div>
+</div>
+
+<script>
+  (function() {
+    // ========== CHANGE THIS TO YOUR SECRET PASSWORD ==========
+    const SECRET_PASSWORD = "01100710."; // <-- CHANGE THIS (default: your special date 01-10-2026)
+    // =========================================================
+
+    const passwordInput = document.getElementById('passwordInput');
+    const unlockBtn = document.getElementById('unlockBtn');
+    const errorMsg = document.getElementById('errorMsg');
+    const toggleEye = document.getElementById('toggleEye');
+
+    // toggle password visibility
+    let eyeOpen = false;
+    toggleEye.addEventListener('click', function() {
+      eyeOpen = !eyeOpen;
+      passwordInput.type = eyeOpen ? 'text' : 'password';
+      this.classList.toggle('fa-eye');
+      this.classList.toggle('fa-eye-slash');
+    });
+
+    // unlock logic
+    function tryUnlock() {
+      const entered = passwordInput.value.trim();
+
+      if (entered === "") {
+        errorMsg.textContent = "⚠️ please enter the password";
+        passwordInput.classList.add('error');
+        setTimeout(() => passwordInput.classList.remove('error'), 600);
+        return;
+      }
+
+      if (entered === SECRET_PASSWORD) {
+        errorMsg.style.color = "#a0ffb0";
+        errorMsg.textContent = "✅ unlocked! entering...";
+        passwordInput.style.borderColor = "#a0ffb0";
+        passwordInput.style.boxShadow = "0 0 60px #a0ffb0";
+        // small delay for the success animation
+        setTimeout(() => {
+          // redirect to your main birthday website
+          window.location.href = "index.html";
+        }, 800);
+      } else {
+        errorMsg.style.color = "#ff8daa";
+        errorMsg.textContent = "❌ wrong password, try again babe";
+        passwordInput.classList.add('error');
+        passwordInput.value = '';
+        setTimeout(() => passwordInput.classList.remove('error'), 600);
+      }
+    }
+
+    // click button
+    unlockBtn.addEventListener('click', tryUnlock);
+
+    // press enter
+    passwordInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        tryUnlock();
+      }
+    });
+
+    // auto focus
+    setTimeout(() => passwordInput.focus(), 500);
+
+    // clear error on typing
+    passwordInput.addEventListener('input', function() {
+      if (errorMsg.textContent && !errorMsg.textContent.includes("unlocked")) {
+        errorMsg.textContent = "";
+      }
+    });
+  })();
+</script>
+</body>
+</html>

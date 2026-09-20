@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>🎂 Happy Birthday Sadiya 🎂</title>
-  <!-- fonts & icons -->
+  <title>🔒 Private Access Only 🔒</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -27,7 +26,7 @@
       overflow-x: hidden;
       position: relative;
     }
-    /* crazy twinkling stars + rainbow glow */
+    /* twinkling stars */
     body::before {
       content: '';
       position: fixed;
@@ -55,248 +54,129 @@
       position: relative;
       z-index: 10;
       width: 100%;
-      max-width: 500px;
+      max-width: 480px;
       background: rgba(20, 18, 40, 0.65);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-radius: 2.8rem;
-      padding: 1.8rem 1.2rem 2rem;
+      padding: 2.5rem 1.5rem 2.5rem;
       box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 0 2px rgba(255, 215, 255, 0.2), inset 0 0 60px rgba(190, 130, 255, 0.25);
       border: 1px solid rgba(255, 220, 255, 0.25);
-      min-height: 480px;
-      transition: all 0.3s;
-    }
-
-    /* ===== PAGE SYSTEM ===== */
-    .page {
-      display: none;
-      animation: fadeGlow 0.7s ease;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      width: 100%;
-    }
-    .page.active {
-      display: flex;
+      text-align: center;
+      animation: fadeGlow 0.9s ease;
     }
     @keyframes fadeGlow {
       0% { opacity: 0; transform: translateY(25px) scale(0.96); filter: blur(8px); }
       100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
     }
 
-    /* ----- PAGE 0 : romantic intro + popup ----- */
-    #page0 {
-      justify-content: center;
-      min-height: 400px;
-      text-align: center;
-      gap: 0.6rem;
+    .lock-icon {
+      font-size: 4.2rem;
+      animation: lockPulse 2s ease-in-out infinite;
+      filter: drop-shadow(0 0 30px #ffb0f0);
+      margin-bottom: 0.3rem;
     }
-    .intro-heart {
-      font-size: 3.5rem;
-      animation: pulseHeart 1.5s ease-in-out infinite;
+    @keyframes lockPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px #ffb0f0); }
+      50% { transform: scale(1.12); filter: drop-shadow(0 0 60px #ff99dd, 0 0 100px #b47aff); }
     }
-    @keyframes pulseHeart {
-      0%, 100% { transform: scale(1); text-shadow: 0 0 20px #ff4d6d; }
-      50% { transform: scale(1.2); text-shadow: 0 0 60px #ff4d6d, 0 0 100px #ff4d6d; }
-    }
-    .intro-title {
+
+    .lock-title {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       background: linear-gradient(135deg, #ffdbb5, #ffb0f0, #c5acff, #ff99dd);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      line-height: 1.3;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
     }
-    .intro-sub {
+    .lock-sub {
       color: #eaceff;
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 500;
       background: rgba(255, 200, 255, 0.08);
-      padding: 0.4rem 1.2rem;
+      padding: 0.5rem 1.3rem;
       border-radius: 40px;
       border: 1px solid #ffb0ff44;
       backdrop-filter: blur(4px);
-    }
-    .intro-sub i {
-      color: #ff8dcb;
-      margin: 0 6px;
-    }
-    .highlight-word {
+      letter-spacing: 1px;
       display: inline-block;
-      background: linear-gradient(135deg, #ff6b6b, #feca57, #ff9ff3);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-weight: 800;
-      font-size: 2rem;
-      animation: rainbowText 2s linear infinite;
-      background-size: 300% 300%;
-      padding: 0 8px;
+      margin-bottom: 1.8rem;
     }
-    @keyframes rainbowText {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .lock-sub i {
+      color: #ff8dcb;
+      margin: 0 4px;
     }
-    .intro-btn {
-      background: linear-gradient(145deg, #ff99dd, #b47aff);
-      border: none;
-      padding: 0.9rem 2.5rem;
-      border-radius: 60px;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #170f2b;
-      box-shadow: 0 0 40px #c87aff, 0 10px 20px rgba(0,0,0,0.5);
-      transition: 0.3s;
-      cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+
+    .password-input-wrap {
+      position: relative;
       width: 100%;
-      max-width: 220px;
-      text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
-      margin: 0.5rem auto;
+      max-width: 310px;
+      margin: 0 auto 0.5rem;
     }
-    .intro-btn:hover { transform: scale(1.05); box-shadow: 0 0 70px #b47aff; }
-    .intro-btn:active { transform: scale(0.94); }
-
-    /* popup overlay */
-    .popup-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(10px);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-      animation: fadeIn 0.5s ease;
-    }
-    .popup-overlay.show {
-      display: flex;
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.8); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-    .popup-box {
-      background: linear-gradient(145deg, #1e1b3b, #2a2345);
-      border-radius: 3rem;
-      padding: 2.5rem 2rem;
-      max-width: 400px;
-      width: 90%;
-      text-align: center;
-      border: 2px solid #ffb0ff66;
-      box-shadow: 0 0 100px #b47aff55, inset 0 0 60px #b47aff22;
-      animation: popFloat 2s infinite alternate ease-in-out;
-    }
-    @keyframes popFloat {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-10px); }
-    }
-    .popup-box h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.8rem;
-      background: linear-gradient(135deg, #ffdbb5, #ffb0f0, #c5acff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 0.5rem;
-    }
-    .popup-box p {
-      color: #eaceff;
-      font-size: 1.3rem;
-      line-height: 1.8;
-    }
-    .popup-box .highlight {
-      font-size: 2rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: rainbowText 2s linear infinite;
-      background-size: 300% 300%;
-    }
-    .popup-close-btn {
-      margin-top: 1.5rem;
-      background: linear-gradient(145deg, #ff99dd, #b47aff);
-      border: none;
-      padding: 0.7rem 2.5rem;
+    .password-input {
+      width: 100%;
+      padding: 1rem 3rem 1rem 1.5rem;
       border-radius: 60px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #170f2b;
-      cursor: pointer;
-      box-shadow: 0 0 30px #b47aff77;
-      transition: 0.3s;
-      border: 1px solid #fff3;
-    }
-    .popup-close-btn:hover { transform: scale(1.05); box-shadow: 0 0 60px #c28aff; }
-
-    /* ----- PAGE 1 : countdown + enter (centered) ----- */
-    #page1 {
-      justify-content: center;
-      min-height: 380px;
-      text-align: center;
-    }
-    #page1 .countdown-panel h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
+      border: 2px solid rgba(255, 180, 255, 0.4);
+      background: rgba(0, 0, 0, 0.4);
+      color: #fff3d6;
+      font-size: 1.2rem;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
       letter-spacing: 3px;
-      background: linear-gradient(135deg, #f9e0b0, #ffb6e6, #c9b0ff, #ff99dd);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 40px #c78aff99;
-      margin-bottom: 0.2rem;
-    }
-    #page1 .sub {
-      font-size: 0.9rem;
-      color: #d9c9ff;
-      letter-spacing: 4px;
-      opacity: 0.9;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-    }
-    .countdown-grid {
-      display: flex;
-      justify-content: center;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-      margin: 1rem 0 1.5rem;
-    }
-    .time-box {
-      background: rgba(0, 0, 0, 0.35);
-      border-radius: 1.8rem;
-      padding: 0.6rem 0.8rem;
-      min-width: 70px;
+      text-align: center;
+      outline: none;
+      transition: 0.3s;
       backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 200, 255, 0.3);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      box-shadow: 0 0 20px rgba(180, 122, 255, 0.2);
+    }
+    .password-input::placeholder {
+      color: #b8a0d0;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+    .password-input:focus {
+      border-color: #ffb0f0;
+      box-shadow: 0 0 40px #b47aff, 0 0 80px #ff99dd55;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .password-input.error {
+      border-color: #ff4d6d;
+      animation: shake 0.5s ease;
+      box-shadow: 0 0 40px #ff4d6d;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-12px); }
+      40% { transform: translateX(12px); }
+      60% { transform: translateX(-8px); }
+      80% { transform: translateX(8px); }
+    }
+    .input-icon {
+      position: absolute;
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ffb0f0;
+      font-size: 1.2rem;
+      cursor: pointer;
       transition: 0.2s;
     }
-    .time-box .number {
-      font-size: 2.6rem;
-      font-weight: 700;
+    .input-icon:hover {
       color: #fff3d6;
-      text-shadow: 0 0 20px #e6a0ff, 0 0 40px #a06eff;
-      line-height: 1.2;
+      text-shadow: 0 0 20px #ffb0f0;
     }
-    .time-box .label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      color: #c2b0f0;
-      letter-spacing: 1.5px;
-      font-weight: 600;
-    }
-    .enter-btn {
+
+    .unlock-btn {
       background: linear-gradient(145deg, #ff99dd, #b47aff, #ff99dd);
       background-size: 200% 200%;
       animation: rainbowBtn 3s ease infinite;
       border: none;
       padding: 0.9rem 2.5rem;
       border-radius: 60px;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: #170f2b;
       letter-spacing: 2px;
@@ -307,680 +187,153 @@
       width: 100%;
       max-width: 240px;
       text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
-      margin: 0 auto;
+      margin: 1rem auto 0;
+      display: block;
     }
     @keyframes rainbowBtn {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    .enter-btn:hover { transform: scale(1.05); box-shadow: 0 0 70px #b47aff; }
-    .enter-btn:active { transform: scale(0.94); }
+    .unlock-btn:hover { transform: scale(1.05); box-shadow: 0 0 70px #b47aff; }
+    .unlock-btn:active { transform: scale(0.94); }
 
-    /* ----- PAGE 2 : cake & candles ----- */
-    #page2 {
-      text-align: center;
-      gap: 0.5rem;
-    }
-    .cake-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.8rem;
-      background: linear-gradient(135deg, #ffdbb5, #ffb0f0, #c5acff, #ff99dd);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 0;
-    }
-    .cake-emoji {
-      font-size: 4.5rem;
-      filter: drop-shadow(0 0 40px #ffaaff);
-      margin: 0;
-    }
-    .candle-container {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      margin: 0.3rem 0 0.6rem;
-    }
-    .candle {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      transition: 0.2s;
-      filter: drop-shadow(0 0 15px #ffaa66);
-    }
-    .candle:active { transform: scale(0.85); }
-    .candle .flame {
-      font-size: 2.4rem;
-      transition: 0.25s;
-      line-height: 1;
-      text-shadow: 0 0 30px #ff8800, 0 0 60px #ff4400;
-    }
-    .candle .flame.blown {
-      opacity: 0.15;
-      transform: scale(0.3);
-      text-shadow: none;
-    }
-    .candle .stick {
-      width: 8px;
-      height: 32px;
-      background: linear-gradient(to right, #f5b0a0, #d48a7a);
-      border-radius: 4px 4px 0 0;
-      margin-top: -4px;
-      box-shadow: inset -2px 0 #b06a5a;
-    }
-    .candle .stick-bottom {
-      width: 16px;
-      height: 8px;
-      background: #f5c8b0;
-      border-radius: 0 0 10px 10px;
-      margin-top: -2px;
-    }
-    .candle-message {
-      min-height: 3rem;
-      font-size: 1.1rem;
-      color: #f5d6ff;
-      background: rgba(0,0,0,0.35);
-      padding: 0.5rem 1.2rem;
-      border-radius: 40px;
-      backdrop-filter: blur(4px);
-      border: 1px solid #ffb0ff55;
-      max-width: 95%;
-      margin: 0.3rem auto;
+    .error-msg {
+      color: #ff8daa;
+      font-size: 0.95rem;
       font-weight: 600;
+      min-height: 1.4rem;
+      margin-top: 0.6rem;
+      text-shadow: 0 0 20px #ff4d6d;
+      animation: fadeIn 0.3s ease;
     }
-    .next-btn {
-      background: linear-gradient(145deg, #ffb0e6, #b47aff);
-      border: none;
-      padding: 0.7rem 2.2rem;
-      border-radius: 60px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #170f2b;
-      box-shadow: 0 0 30px #b47aff77;
-      transition: 0.3s;
-      cursor: pointer;
-      margin-top: 0.3rem;
-      border: 1px solid #fff3;
-    }
-    .next-btn:hover { transform: scale(1.05); box-shadow: 0 0 60px #c28aff; }
-    .next-btn:disabled {
-      opacity: 0.35;
-      transform: scale(0.95);
-      pointer-events: none;
-      filter: grayscale(0.5);
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
-    /* ----- PAGE 3 : confetti + crazy stuff ----- */
-    #page3 {
-      text-align: center;
-      gap: 0.6rem;
+    .hint-msg {
+      color: #c2b0f0;
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-top: 1rem;
+      opacity: 0.75;
+      letter-spacing: 0.5px;
     }
-    .confetti-big {
-      font-size: 3.5rem;
-      animation: spinConfetti 4s linear infinite;
+    .hint-msg i {
+      color: #ffb0f0;
+      margin-right: 4px;
     }
-    @keyframes spinConfetti {
-      0% { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.2); }
-      100% { transform: rotate(360deg) scale(1); }
-    }
-    .crazy-text {
-      font-size: 1.8rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: rainbowText 2s linear infinite;
-      background-size: 300% 300%;
-    }
-    .crazy-sub {
-      color: #eaceff;
-      font-size: 1.1rem;
-      background: rgba(0,0,0,0.25);
-      padding: 0.5rem 1.2rem;
-      border-radius: 40px;
-      border: 1px solid #ffb0ff44;
-    }
-    .next-btn-page3 {
-      background: linear-gradient(145deg, #ffb0e6, #b47aff);
-      border: none;
-      padding: 0.7rem 2.2rem;
-      border-radius: 60px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #170f2b;
-      box-shadow: 0 0 30px #b47aff77;
-      transition: 0.3s;
-      cursor: pointer;
-      margin-top: 0.3rem;
-      border: 1px solid #fff3;
-    }
-    .next-btn-page3:hover { transform: scale(1.05); }
 
-    /* ----- PAGE 4 : gallery slideshow ----- */
-    #page4 {
-      width: 100%;
-      gap: 0.2rem;
-    }
-    .slideshow-container {
-      width: 100%;
-      position: relative;
-      border-radius: 2rem;
-      overflow: hidden;
-      box-shadow: 0 0 50px #a07aff66;
-      background: #1a152f;
-      touch-action: pan-y;
-    }
-    .slideshow-track {
-      display: flex;
-      transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1);
-      will-change: transform;
-    }
-    .slide {
-      min-width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      display: block;
-      background: #2a2345;
-    }
-    .slide-indicators {
-      display: flex;
-      justify-content: center;
-      gap: 0.6rem;
-      margin: 0.5rem 0 0.1rem;
-      flex-wrap: wrap;
-    }
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 20px;
-      background: rgba(255, 200, 255, 0.2);
-      border: 1px solid #b48aff55;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-    .dot.active {
-      background: #ffb0f0;
-      width: 35px;
-      border-color: #ffb0f0;
-      box-shadow: 0 0 20px #ff99dd;
-    }
-    .slide-caption {
-      color: #eaceff;
-      font-size: 1rem;
-      font-weight: 600;
-      text-align: center;
-      background: rgba(0,0,0,0.3);
-      padding: 0.3rem 1rem;
-      border-radius: 40px;
-      backdrop-filter: blur(4px);
-      border: 1px solid #ffb0ff44;
-      margin: 0.1rem 0;
-    }
-    .next-btn-page4 {
-      background: linear-gradient(145deg, #ffb0e6, #b47aff);
-      border: none;
-      padding: 0.7rem 2.2rem;
-      border-radius: 60px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #170f2b;
-      box-shadow: 0 0 30px #b47aff77;
-      transition: 0.3s;
-      cursor: pointer;
-      margin: 0.5rem 0 0.1rem;
-      border: 1px solid #fff3;
-    }
-    .next-btn-page4:hover { transform: scale(1.05); }
-
-    /* ----- PAGE 5 : letter + typing ----- */
-    #page5 {
-      text-align: center;
-      gap: 0.7rem;
-      padding: 0.2rem 0;
-    }
-    .letter-box {
-      background: rgba(10, 8, 25, 0.7);
-      backdrop-filter: blur(8px);
-      padding: 1.5rem 1.2rem;
-      border-radius: 40px 20px 40px 20px;
-      border-left: 6px solid #ffb0f0;
-      border-right: 6px solid #b48aff;
-      box-shadow: 0 0 80px #8d6eff44;
-      width: 100%;
-      animation: floatLetter 4s infinite alternate ease-in-out;
-      min-height: 230px;
-    }
-    @keyframes floatLetter {
-      0% { transform: translateY(0px); box-shadow: 0 0 30px #a07aff33; }
-      100% { transform: translateY(-6px); box-shadow: 0 0 70px #c28aff88; }
-    }
-    .letter-box h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.4rem;
-      background: linear-gradient(135deg, #ffdbb5, #ffb0f0, #c5acff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 0.2rem;
-    }
-    .typing-area {
-      font-size: 1.1rem;
-      color: #f0e6ff;
-      line-height: 1.8;
-      min-height: 130px;
-      text-align: left;
-      padding: 0.3rem 0.5rem;
-      border-left: 3px solid #ffb0f066;
-      background: rgba(0,0,0,0.15);
-      border-radius: 16px;
-      padding-left: 1rem;
-      font-weight: 400;
-      text-shadow: 0 0 20px #bc9eff;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-    .typing-area .cursor {
-      display: inline-block;
-      width: 3px;
-      height: 1.2em;
-      background: #ffb0f0;
-      animation: blink 0.9s step-end infinite;
-      vertical-align: text-bottom;
-      margin-left: 4px;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    .thankyou-msg {
+    .hearts-float {
       font-size: 1.4rem;
-      font-weight: 700;
-      color: #f5d6ff;
-      text-shadow: 0 0 40px #b47aff;
-      margin-top: 0.1rem;
-      background: rgba(0,0,0,0.2);
-      padding: 0.4rem 1.5rem;
-      border-radius: 60px;
-      border: 1px solid #ffb0ff55;
-      backdrop-filter: blur(4px);
+      letter-spacing: 8px;
+      margin-top: 1.2rem;
+      opacity: 0.8;
+      animation: floatHearts 3s ease-in-out infinite;
     }
-    .thankyou-msg i { color: #ff8dcb; margin: 0 6px; }
+    @keyframes floatHearts {
+      0%, 100% { transform: translateY(0); opacity: 0.6; }
+      50% { transform: translateY(-8px); opacity: 1; }
+    }
 
-    /* responsive */
     @media (max-width: 450px) {
-      .main-wrapper { padding: 1.2rem 0.7rem; border-radius: 2rem; }
-      #page0 .intro-title { font-size: 2rem; }
-      #page0 .highlight-word { font-size: 1.6rem; }
-      .popup-box h2 { font-size: 2.2rem; }
-      .popup-box p { font-size: 1.1rem; }
-      #page1 .countdown-panel h1 { font-size: 1.8rem; }
-      .time-box { min-width: 60px; padding: 0.4rem 0.4rem; }
-      .time-box .number { font-size: 2rem; }
-      .enter-btn { font-size: 1.3rem; padding: 0.6rem 1.5rem; max-width: 200px; }
-      .cake-title { font-size: 2.2rem; }
-      .candle .flame { font-size: 2rem; }
-      .candle .stick { height: 26px; }
-      .candle-container { gap: 0.8rem; }
-      .letter-box h2 { font-size: 1.8rem; }
-      .typing-area { font-size: 0.95rem; min-height: 110px; }
-      .thankyou-msg { font-size: 1.1rem; }
-      .confetti-big { font-size: 2.8rem; }
-      .crazy-text { font-size: 1.4rem; }
+      .main-wrapper { padding: 2rem 1rem 2rem; border-radius: 2rem; }
+      .lock-title { font-size: 2.2rem; }
+      .lock-icon { font-size: 3.4rem; }
+      .password-input { font-size: 1rem; padding: 0.9rem 2.5rem 0.9rem 1rem; }
+      .unlock-btn { font-size: 1.2rem; padding: 0.8rem 2rem; max-width: 200px; }
     }
   </style>
 </head>
 <body>
+<div class="main-wrapper">
+  <div class="lock-icon">🔒</div>
+  <div class="lock-title">Private  access</div>
+  <div class="lock-sub"><i class="fas fa-heart"></i> only for you BABE <i class="fas fa-heart"></i></div>
 
-<!-- POPUP OVERLAY -->
-<div class="popup-overlay" id="popupOverlay">
-  <div class="popup-box">
-    <h2>💖 Surprise! 💖</h2>
-    <p>
-      There's a <span style="color:#ffb0f0; font-weight:700;">beautiful</span> surprise<br>
-      waiting for you, my <span class="highlight">My Love</span> ✨
-    </p>
-    <p style="font-size:1.6rem; margin-top:0.3rem;">🎉 Happy Birthday <span class="highlight">Charvayaaa</span> 🎉</p>
-    <button class="popup-close-btn" id="popupCloseBtn"><i class="fas fa-heart"></i> Let's Go!</button>
-  </div>
-</div>
-
-<div class="main-wrapper" id="appWrapper">
-
-  <!-- PAGE 0 : romantic intro -->
-  <div class="page active" id="page0">
-    <div class="intro-heart">💖</div>
-    <div class="intro-title">Hey Babe,<br>this is your loving boyfriend</div>
-    <div class="intro-sub">
-      <i class="fas fa-star"></i> with all my heart <i class="fas fa-star"></i>
-    </div>
-    <div style="font-size:1.8rem; color:#ffb0f0; font-weight:300; letter-spacing:2px;">
-      ✨ <span class="highlight-word">SADIYA</span> ✨
-    </div>
-    <div style="font-size:2.2rem; font-weight:700; background:linear-gradient(135deg,#ffdbb5,#ffb0f0,#c5acff); -webkit-background-clip:text; background-clip:text; color:transparent;">
-      Happy Birthday Charvayaaa 🎂
-    </div>
-    <button class="intro-btn" id="introBtn"><i class="fas fa-crown"></i> Enter the Magic</button>
+  <div class="password-input-wrap">
+    <input type="password" class="password-input" id="passwordInput" placeholder="enter secret password" autocomplete="off">
+    <i class="fas fa-eye input-icon" id="toggleEye"></i>
   </div>
 
-  <!-- PAGE 1 : countdown + enter -->
-  <div class="page" id="page1">
-    <div class="countdown-panel">
-      <h1>✨ 1 OCT 2026 ✨</h1>
-      <div class="sub">💫 delusional countdown 💫</div>
-      <div class="countdown-grid">
-        <div class="time-box"><span class="number" id="days">--</span><div class="label">days</div></div>
-        <div class="time-box"><span class="number" id="hours">--</span><div class="label">hours</div></div>
-        <div class="time-box"><span class="number" id="minutes">--</span><div class="label">minutes</div></div>
-        <div class="time-box"><span class="number" id="seconds">--</span><div class="label">seconds</div></div>
-      </div>
-      <button class="enter-btn" id="enterBtn"><i class="fas fa-crown" style="margin-right: 10px;"></i> ENTER</button>
-    </div>
-  </div>
+  <button class="unlock-btn" id="unlockBtn"><i class="fas fa-unlock"></i> Unlock</button>
 
-  <!-- PAGE 2 : cake & candles -->
-  <div class="page" id="page2">
-    <div class="cake-title">Happy Birthday Sadiya</div>
-    <div class="cake-emoji">🎂</div>
-    <div class="candle-container" id="candleContainer">
-      <div class="candle" data-index="0"><span class="flame">🔥</span><div class="stick"></div><div class="stick-bottom"></div></div>
-      <div class="candle" data-index="1"><span class="flame">🔥</span><div class="stick"></div><div class="stick-bottom"></div></div>
-      <div class="candle" data-index="2"><span class="flame">🔥</span><div class="stick"></div><div class="stick-bottom"></div></div>
-      <div class="candle" data-index="3"><span class="flame">🔥</span><div class="stick"></div><div class="stick-bottom"></div></div>
-      <div class="candle" data-index="4"><span class="flame">🔥</span><div class="stick"></div><div class="stick-bottom"></div></div>
-    </div>
-    <div class="candle-message" id="candleMsg">💫 blow each candle to reveal a wish ✨</div>
-    <button class="next-btn" id="nextFromCandles" disabled><i class="fas fa-arrow-right"></i> Next</button>
-  </div>
+  <div class="error-msg" id="errorMsg"></div>
+  <div class="hint-msg"><i class="fas fa-lightbulb"></i> hint:might be any random stuff</div>
 
-  <!-- PAGE 3 : confetti + crazy -->
-  <div class="page" id="page3">
-    
-    <div class="crazy-text">YOU ARE MAGIC!</div>
-    <div class="crazy-sub">💖 delulu mode · infinite love · crazy vibes 💖</div>
-    <div style="display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; font-size:2rem;">
-      <span>🌟</span><span>🌈</span><span>🔥</span><span>💫</span><span>🎆</span>
-    </div>
-    <button class="next-btn-page3" id="nextFromCrazy"><i class="fas fa-images"></i> See Memories</button>
-  </div>
-
-  <!-- PAGE 4 : gallery slideshow -->
-  <div class="page" id="page4">
-    <div class="slideshow-container" id="slideshowContainer">
-      <div class="slideshow-track" id="slideshowTrack"></div>
-    </div>
-    <div class="slide-indicators" id="indicators"></div>
-    <div class="slide-caption" id="slideCaption">🌸 beautiful moments</div>
-    <button class="next-btn-page4" id="nextFromGallery"><i class="fas fa-envelope"></i> Open Letter</button>
-  </div>
-
-  <!-- PAGE 5 : letter + typing -->
-  <div class="page" id="page5">
-    <div class="letter-box">
-      <h2>💌 My Dearest Sadiya</h2>
-      <div class="typing-area" id="typingArea"><span class="cursor"></span></div>
-    </div>
-    <div class="thankyou-msg"><i class="fas fa-heart"></i> With love, Arbaz Hassan <i class="fas fa-heart"></i></div>
-    <div style="font-size:0.85rem; color:#b8a0d0; margin-top:0.1rem;">✨ forever in my delulu heart ✨</div>
-  </div>
+  <div class="hearts-float"> 💖</div>
 </div>
 
 <script>
   (function() {
-    // ========== POPUP LOGIC ==========
-    const popup = document.getElementById('popupOverlay');
-    const popupClose = document.getElementById('popupCloseBtn');
+    // ========== CHANGE THIS TO YOUR SECRET PASSWORD ==========
+    const SECRET_PASSWORD = "01100710."; // <-- CHANGE THIS (default: your special date 01-10-2026)
+    // =========================================================
 
-    // Show popup on load with a delay
-    setTimeout(() => {
-      popup.classList.add('show');
-    }, 600);
+    const passwordInput = document.getElementById('passwordInput');
+    const unlockBtn = document.getElementById('unlockBtn');
+    const errorMsg = document.getElementById('errorMsg');
+    const toggleEye = document.getElementById('toggleEye');
 
-    popupClose.addEventListener('click', function() {
-      popup.classList.remove('show');
+    // toggle password visibility
+    let eyeOpen = false;
+    toggleEye.addEventListener('click', function() {
+      eyeOpen = !eyeOpen;
+      passwordInput.type = eyeOpen ? 'text' : 'password';
+      this.classList.toggle('fa-eye');
+      this.classList.toggle('fa-eye-slash');
     });
 
-    // ========== COUNTDOWN ==========
-    const targetDate = new Date('October 1, 2026 00:00:00 GMT+0530').getTime();
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
-    function updateCountdown() {
-      const now = Date.now();
-      let diff = targetDate - now;
-      if (diff < 0) diff = Math.abs(diff);
-      const days = Math.floor(diff / (1000*60*60*24));
-      const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-      const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
-      const seconds = Math.floor((diff % (1000*60)) / 1000);
-      daysEl.textContent = String(days).padStart(2,'0');
-      hoursEl.textContent = String(hours).padStart(2,'0');
-      minutesEl.textContent = String(minutes).padStart(2,'0');
-      secondsEl.textContent = String(seconds).padStart(2,'0');
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    // unlock logic
+    function tryUnlock() {
+      const entered = passwordInput.value.trim();
 
-    // ========== PAGE NAVIGATION ==========
-    function showPage(id) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
+      if (entered === "") {
+        errorMsg.textContent = "⚠️ please enter the password";
+        passwordInput.classList.add('error');
+        setTimeout(() => passwordInput.classList.remove('error'), 600);
+        return;
+      }
 
-    // ========== INTRO -> PAGE 1 ==========
-    document.getElementById('introBtn').addEventListener('click', function() {
-      showPage('page1');
-    });
-
-    // ========== AUTO PLAY BIRTHDAY SONG (on candle page) ==========
-    let audioCtx = null;
-    function playBirthdaySong() {
-      try {
-        if (!audioCtx) {
-          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        const notes = [262, 262, 294, 262, 349, 330, 262, 262, 294, 262, 392, 349, 262, 262, 523, 440, 349, 330, 294, 494, 494, 440, 349, 392, 349];
-        const durations = [0.3, 0.3, 0.3, 0.3, 0.3, 0.6, 0.3, 0.3, 0.3, 0.3, 0.3, 0.6, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.6, 0.3, 0.3, 0.3, 0.3, 0.3, 0.6];
-        let time = audioCtx.currentTime;
-        notes.forEach((freq, i) => {
-          const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          osc.frequency.value = freq;
-          osc.type = 'sine';
-          gain.gain.setValueAtTime(0.15, time);
-          gain.gain.exponentialRampToValueAtTime(0.01, time + durations[i]);
-          osc.start(time);
-          osc.stop(time + durations[i]);
-          time += durations[i] + 0.05;
-        });
-      } catch(e) { console.log('audio error', e); }
+      if (entered === SECRET_PASSWORD) {
+        errorMsg.style.color = "#a0ffb0";
+        errorMsg.textContent = "✅ unlocked! entering...";
+        passwordInput.style.borderColor = "#a0ffb0";
+        passwordInput.style.boxShadow = "0 0 60px #a0ffb0";
+        // small delay for the success animation
+        setTimeout(() => {
+          // redirect to your main birthday website
+          window.location.href = "main.html";
+        }, 800);
+      } else {
+        errorMsg.style.color = "#ff8daa";
+        errorMsg.textContent = "❌ wrong password, try again babe";
+        passwordInput.classList.add('error');
+        passwordInput.value = '';
+        setTimeout(() => passwordInput.classList.remove('error'), 600);
+      }
     }
 
-    // ========== ENTER -> PAGE 2 (play song) ==========
-    document.getElementById('enterBtn').addEventListener('click', function() {
-      showPage('page2');
-      playBirthdaySong();
-    });
+    // click button
+    unlockBtn.addEventListener('click', tryUnlock);
 
-    // ========== CANDLES LOGIC ==========
-    const candles = document.querySelectorAll('.candle');
-    const candleMsg = document.getElementById('candleMsg');
-    const nextCandleBtn = document.getElementById('nextFromCandles');
-    let blownCount = 0;
-    const romanticWishes = [
-      "💖 You are the poetry my heart never knew it needed.",
-      "✨ Every moment with you is a beautiful dream.",
-      "🌹 Your smile is my favorite sunrise.",
-      "💫 You make the universe feel small.",
-      "🌟 You are my endless love story."
-    ];
-    let blownStatus = [false, false, false, false, false];
-
-    candles.forEach((candle, idx) => {
-      candle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (blownStatus[idx]) return;
-        const flame = this.querySelector('.flame');
-        flame.classList.add('blown');
-        blownStatus[idx] = true;
-        blownCount++;
-        candleMsg.innerHTML = `💕 ${romanticWishes[idx]}`;
-        if (blownCount === 5) {
-          candleMsg.innerHTML = '🎉 All candles blown! You are magical. ✨';
-          nextCandleBtn.disabled = false;
-          nextCandleBtn.style.opacity = '1';
-        } else {
-          candleMsg.innerHTML += ` (${blownCount}/5)`;
-        }
-      });
-    });
-
-    // next from candles -> page 3
-    nextCandleBtn.addEventListener('click', function() {
-      if (blownCount === 5) {
-        showPage('page3');
+    // press enter
+    passwordInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        tryUnlock();
       }
     });
 
-    // ========== CRAZY PAGE -> GALLERY ==========
-    document.getElementById('nextFromCrazy').addEventListener('click', function() {
-      showPage('page4');
-      initSlideshow();
-    });
+    // auto focus
+    setTimeout(() => passwordInput.focus(), 500);
 
-    // ========== SLIDESHOW (gallery) ==========
-    const slideshowTrack = document.getElementById('slideshowTrack');
-    const indicators = document.getElementById('indicators');
-    const slideCaption = document.getElementById('slideCaption');
-    let currentSlide = 0;
-    let slideImages = [];
-
-    const imageUrls = [
-      'images/Snapchat-108400800.jpg',
-      'images/Snapchat-1596113706.jpg',
-      
-      
-      'images/Screenshot_20260920-233239.Snapchat.png',
-      'images/IMG-20260920-WA0012.jpg',
-      'images/Screenshot_20260920-233528.WhatsApp.png',
-      
-      'images/Snapchat-470134629.jpg',
-      'images/IMG-20260920-WA0013.jpg',
-      
-      'images/Snapchat-1608064335.jpg',
-    ];
-    const captions = [
-      '🌅 sunset laughter', '☕ coffee & you', '🚗 road trip vibes',
-      '💦 waterfall magic', '🌃 city lights', '🎈 balloons & joy',
-      '✨ glitchy love', '💫 parallel universe'
-    ];
-
-    function initSlideshow() {
-      slideshowTrack.innerHTML = '';
-      indicators.innerHTML = '';
-      slideImages = imageUrls;
-      slideImages.forEach((url, i) => {
-        const img = document.createElement('img');
-        img.src = url;
-        img.className = 'slide';
-        img.alt = captions[i] || 'moment';
-        slideshowTrack.appendChild(img);
-        const dot = document.createElement('span');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.dataset.index = i;
-        dot.addEventListener('click', () => goToSlide(i));
-        indicators.appendChild(dot);
-      });
-      currentSlide = 0;
-      updateSlide();
-      slideCaption.textContent = captions[0] || '🌸 memories';
-    }
-
-    function goToSlide(index) {
-      if (index < 0) index = 0;
-      if (index >= slideImages.length) index = slideImages.length - 1;
-      currentSlide = index;
-      updateSlide();
-    }
-
-    function updateSlide() {
-      slideshowTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-      document.querySelectorAll('.dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
-      });
-      slideCaption.textContent = captions[currentSlide] || '🌸 beautiful moment';
-    }
-
-    // touch/drag
-    let startX = 0, isDragging = false;
-    const container = document.getElementById('slideshowContainer');
-    container.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-      isDragging = true;
-    });
-    container.addEventListener('touchend', (e) => {
-      if (!isDragging) return;
-      const endX = e.changedTouches[0].clientX;
-      const diff = startX - endX;
-      if (Math.abs(diff) > 40) {
-        if (diff > 0 && currentSlide < slideImages.length - 1) goToSlide(currentSlide + 1);
-        else if (diff < 0 && currentSlide > 0) goToSlide(currentSlide - 1);
+    // clear error on typing
+    passwordInput.addEventListener('input', function() {
+      if (errorMsg.textContent && !errorMsg.textContent.includes("unlocked")) {
+        errorMsg.textContent = "";
       }
-      isDragging = false;
     });
-    let mouseDown = false, mouseStartX = 0;
-    container.addEventListener('mousedown', (e) => {
-      mouseDown = true;
-      mouseStartX = e.clientX;
-    });
-    container.addEventListener('mouseup', (e) => {
-      if (!mouseDown) return;
-      const diff = mouseStartX - e.clientX;
-      if (Math.abs(diff) > 40) {
-        if (diff > 0 && currentSlide < slideImages.length - 1) goToSlide(currentSlide + 1);
-        else if (diff < 0 && currentSlide > 0) goToSlide(currentSlide - 1);
-      }
-      mouseDown = false;
-    });
-    container.addEventListener('mouseleave', () => { mouseDown = false; });
-
-    // next from gallery -> page 5 (letter)
-    document.getElementById('nextFromGallery').addEventListener('click', function() {
-      showPage('page5');
-      startTyping();
-    });
-
-    // ========== TYPING LETTER ==========
-    const typingArea = document.getElementById('typingArea');
-    let typingInterval = null;
-    let fullText = `Happy Birthday, my beautiful Sadiya. ✨\nFrom the very first moment we met, I knew you were special. I still remember our first meetup — how your smile lit up the entire room and my heart skipped a beat. You are the most stunning soul, inside and out. Every day with you is a beautiful delusion I never want to wake up from. I love you endlessly. 💖\n\nForever yours, Arbaz.`;
-    let charIndex = 0;
-
-    function startTyping() {
-      if (typingInterval) clearInterval(typingInterval);
-      charIndex = 0;
-      typingArea.innerHTML = '';
-      typingInterval = setInterval(() => {
-        if (charIndex < fullText.length) {
-          typingArea.innerHTML += fullText[charIndex];
-          charIndex++;
-          typingArea.scrollTop = typingArea.scrollHeight;
-        } else {
-          clearInterval(typingInterval);
-          typingArea.innerHTML += '<span class="cursor"></span>';
-        }
-      }, 40);
-    }
-
-    // ensure page0 active
-    showPage('page0');
   })();
 </script>
 </body>

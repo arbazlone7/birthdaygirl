@@ -59,7 +59,7 @@
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-radius: 2.8rem;
-      padding: 2.5rem 1.5rem 2.5rem;
+      padding: 2rem 1.5rem 2rem;
       box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 0 2px rgba(255, 215, 255, 0.2), inset 0 0 60px rgba(190, 130, 255, 0.25);
       border: 1px solid rgba(255, 220, 255, 0.25);
       text-align: center;
@@ -71,10 +71,10 @@
     }
 
     .lock-icon {
-      font-size: 4.2rem;
+      font-size: 3.6rem;
       animation: lockPulse 2s ease-in-out infinite;
       filter: drop-shadow(0 0 30px #ffb0f0);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
     }
     @keyframes lockPulse {
       0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px #ffb0f0); }
@@ -83,30 +83,84 @@
 
     .lock-title {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       background: linear-gradient(135deg, #ffdbb5, #ffb0f0, #c5acff, #ff99dd);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       line-height: 1.2;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
     }
     .lock-sub {
       color: #eaceff;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 500;
       background: rgba(255, 200, 255, 0.08);
-      padding: 0.5rem 1.3rem;
+      padding: 0.4rem 1.2rem;
       border-radius: 40px;
       border: 1px solid #ffb0ff44;
       backdrop-filter: blur(4px);
       letter-spacing: 1px;
       display: inline-block;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.2rem;
     }
     .lock-sub i {
       color: #ff8dcb;
       margin: 0 4px;
+    }
+
+    /* ===== BIRTHDAY COUNTDOWN ===== */
+    .countdown-label {
+      font-size: 0.75rem;
+      color: #d9c9ff;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      opacity: 0.9;
+      font-weight: 600;
+    }
+    .countdown-label i {
+      color: #ffb0f0;
+      margin: 0 5px;
+    }
+    .mini-countdown {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0 auto 1.4rem;
+      flex-wrap: wrap;
+    }
+    .mini-time-box {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 1.2rem;
+      padding: 0.5rem 0.6rem;
+      min-width: 64px;
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 200, 255, 0.3);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.5), inset 0 0 20px rgba(180, 122, 255, 0.15);
+      transition: 0.2s;
+    }
+    .mini-time-box:hover {
+      transform: scale(1.05);
+      border-color: #ffb0f0;
+      box-shadow: 0 0 25px #b47aff88;
+    }
+    .mini-time-box .mini-number {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #fff3d6;
+      text-shadow: 0 0 15px #e6a0ff, 0 0 30px #a06eff;
+      line-height: 1.1;
+      letter-spacing: 1px;
+      display: block;
+    }
+    .mini-time-box .mini-label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      color: #c2b0f0;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin-top: 2px;
     }
 
     .password-input-wrap {
@@ -122,7 +176,7 @@
       border: 2px solid rgba(255, 180, 255, 0.4);
       background: rgba(0, 0, 0, 0.4);
       color: #fff3d6;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-family: 'Quicksand', sans-serif;
       font-weight: 600;
       letter-spacing: 3px;
@@ -135,7 +189,7 @@
     .password-input::placeholder {
       color: #b8a0d0;
       letter-spacing: 1px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     .password-input:focus {
       border-color: #ffb0f0;
@@ -160,7 +214,7 @@
       top: 50%;
       transform: translateY(-50%);
       color: #ffb0f0;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: 0.2s;
     }
@@ -176,7 +230,7 @@
       border: none;
       padding: 0.9rem 2.5rem;
       border-radius: 60px;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #170f2b;
       letter-spacing: 2px;
@@ -187,7 +241,7 @@
       width: 100%;
       max-width: 240px;
       text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
-      margin: 1rem auto 0;
+      margin: 0.9rem auto 0;
       display: block;
     }
     @keyframes rainbowBtn {
@@ -200,10 +254,10 @@
 
     .error-msg {
       color: #ff8daa;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      min-height: 1.4rem;
-      margin-top: 0.6rem;
+      min-height: 1.3rem;
+      margin-top: 0.5rem;
       text-shadow: 0 0 20px #ff4d6d;
       animation: fadeIn 0.3s ease;
     }
@@ -214,9 +268,9 @@
 
     .hint-msg {
       color: #c2b0f0;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-style: italic;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       opacity: 0.75;
       letter-spacing: 0.5px;
     }
@@ -226,9 +280,9 @@
     }
 
     .hearts-float {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       letter-spacing: 8px;
-      margin-top: 1.2rem;
+      margin-top: 0.9rem;
       opacity: 0.8;
       animation: floatHearts 3s ease-in-out infinite;
     }
@@ -238,19 +292,44 @@
     }
 
     @media (max-width: 450px) {
-      .main-wrapper { padding: 2rem 1rem 2rem; border-radius: 2rem; }
-      .lock-title { font-size: 2.2rem; }
-      .lock-icon { font-size: 3.4rem; }
+      .main-wrapper { padding: 1.6rem 1rem 1.8rem; border-radius: 2rem; }
+      .lock-title { font-size: 2.1rem; }
+      .lock-icon { font-size: 3rem; }
+      .mini-time-box { min-width: 56px; padding: 0.4rem 0.4rem; }
+      .mini-time-box .mini-number { font-size: 1.45rem; }
+      .mini-time-box .mini-label { font-size: 0.55rem; letter-spacing: 1px; }
       .password-input { font-size: 1rem; padding: 0.9rem 2.5rem 0.9rem 1rem; }
-      .unlock-btn { font-size: 1.2rem; padding: 0.8rem 2rem; max-width: 200px; }
+      .unlock-btn { font-size: 1.15rem; padding: 0.8rem 2rem; max-width: 200px; }
+      .countdown-label { font-size: 0.68rem; letter-spacing: 2.5px; }
     }
   </style>
 </head>
 <body>
 <div class="main-wrapper">
   <div class="lock-icon">🔒</div>
-  <div class="lock-title">Private  access</div>
+  <div class="lock-title">Private access</div>
   <div class="lock-sub"><i class="fas fa-heart"></i> only for you BABE <i class="fas fa-heart"></i></div>
+
+  <!-- ===== BIRTHDAY COUNTDOWN ===== -->
+  <div class="countdown-label"><i class="fas fa-birthday-cake"></i> birthday countdown <i class="fas fa-birthday-cake"></i></div>
+  <div class="mini-countdown">
+    <div class="mini-time-box">
+      <span class="mini-number" id="miniDays">--</span>
+      <span class="mini-label">days</span>
+    </div>
+    <div class="mini-time-box">
+      <span class="mini-number" id="miniHours">--</span>
+      <span class="mini-label">hours</span>
+    </div>
+    <div class="mini-time-box">
+      <span class="mini-number" id="miniMinutes">--</span>
+      <span class="mini-label">mins</span>
+    </div>
+    <div class="mini-time-box">
+      <span class="mini-number" id="miniSeconds">--</span>
+      <span class="mini-label">secs</span>
+    </div>
+  </div>
 
   <div class="password-input-wrap">
     <input type="password" class="password-input" id="passwordInput" placeholder="enter secret password" autocomplete="off">
@@ -260,7 +339,7 @@
   <button class="unlock-btn" id="unlockBtn"><i class="fas fa-unlock"></i> Unlock</button>
 
   <div class="error-msg" id="errorMsg"></div>
-  <div class="hint-msg"><i class="fas fa-lightbulb"></i> hint:might be any random stuff</div>
+  <div class="hint-msg"><i class="fas fa-lightbulb"></i> hint: might be any random stuff</div>
 
   <div class="hearts-float"> 💖</div>
 </div>
@@ -268,9 +347,45 @@
 <script>
   (function() {
     // ========== CHANGE THIS TO YOUR SECRET PASSWORD ==========
-    const SECRET_PASSWORD = "01100710."; // <-- CHANGE THIS (default: your special date 01-10-2026)
+    const SECRET_PASSWORD = "01100710."; // <-- your password
     // =========================================================
 
+    // ========== BIRTHDAY COUNTDOWN (1st October) ==========
+    const targetDate = new Date('October 1, 2026 00:00:00 GMT+0530').getTime();
+
+    const miniDays = document.getElementById('miniDays');
+    const miniHours = document.getElementById('miniHours');
+    const miniMinutes = document.getElementById('miniMinutes');
+    const miniSeconds = document.getElementById('miniSeconds');
+
+    function updateMiniCountdown() {
+      const now = Date.now();
+      let diff = targetDate - now;
+
+      // delusional twist — if past, mirror it
+      if (diff < 0) diff = Math.abs(diff);
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      miniDays.textContent = String(days).padStart(2, '0');
+      miniHours.textContent = String(hours).padStart(2, '0');
+      miniMinutes.textContent = String(minutes).padStart(2, '0');
+      miniSeconds.textContent = String(seconds).padStart(2, '0');
+
+      // birthday special — if the day has arrived
+      if (now >= targetDate) {
+        document.querySelector('.countdown-label').innerHTML =
+          '<i class="fas fa-birthday-cake"></i> it\'s her birthday! <i class="fas fa-birthday-cake"></i>';
+      }
+    }
+
+    updateMiniCountdown();
+    setInterval(updateMiniCountdown, 1000);
+
+    // ========== PASSWORD LOGIC ==========
     const passwordInput = document.getElementById('passwordInput');
     const unlockBtn = document.getElementById('unlockBtn');
     const errorMsg = document.getElementById('errorMsg');
